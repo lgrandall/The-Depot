@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  image_url: goals.png
+  price: 9.99
+
+two:
+  title: MyString
+  description: MyText
+  image_url: goals.jpg
+  price: 9.99
+
+three: 
+  title: Chill
+  description: The cool
+  image_url: goals.jpg
+  price: 20.00

@@ -3,6 +3,7 @@
 <%end%>
 
 <h1>Your Pragmatic Clatalog</h1>
+<h1><%= session[:index_counter] %></h1>
 <ul class="catalog">
 	<% cache @products do %>
 		<% @products.each do |product| %>
@@ -15,6 +16,7 @@
 					</p>
 					<div class="price" >
 						<%= number_to_currency(product.price) %>
+						<%= button_to 'Add to Cart', line_items_path(product_id: product) %>
 					</div>
 				</li>
 			<% end %>

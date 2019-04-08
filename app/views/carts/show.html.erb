@@ -1,11 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Your Pragmatic Cart</h1>
-<ul>
-	<% @cart.line_items.each do |line_item| %>
-		<li><%= line_item.quantity %> &times; <%= line_item.product.title %></li>
-	<% end %>
-</ul>
+	<table>
+		<% @cart.line_items.each do |line_item| %>
+			<%= product = line_item.product %>
+			<tr>
+				<td class="quantity"><%= line_item.quantity %></td>
+				<td><%= product.title %></td>
+				<td class="price"><%= number_to_currency(product.price) %></td>
+			</tr>
+		<% end %>
 
+		<tfoot>
+			<tr>
+				<th colspan="2">Total</td>
+				<td class="price"><%= number_to_currency(@cart.total_price) %></td>
+			</tr>
+		</tfoot>
+	</table>
+
+<%= button_to 'Empy Cart', @cart, method: :delete, data: { confirm: 'Are you sure you want to delete'} %>
 <%= link_to 'Edit', edit_cart_path(@cart) %> |
 <%= link_to 'Back', carts_path %>

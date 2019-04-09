@@ -14,7 +14,7 @@
 		<tfoot>
 			<tr>
 				<th colspan="2">Total</td>
-				<td class="price"><%= number_to_currency(@cart.total_price) %></td>
+				<td class="price"><%= number_to_currency(@cart.total) %></td>
 			</tr>
 		</tfoot>
 	</table>
@@ -22,3 +22,4 @@
 <%= button_to 'Empy Cart', @cart, method: :delete, data: { confirm: 'Are you sure you want to delete'} %>
 <%= link_to 'Edit', edit_cart_path(@cart) %> |
 <%= link_to 'Back', carts_path %>
+

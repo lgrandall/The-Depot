@@ -34,6 +34,7 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       if @line_item.save
+        @cart.total_up(product)
         reset_counter
         format.html { redirect_to @line_item.cart }
         format.json { render :show, status: :created, location: @line_item }

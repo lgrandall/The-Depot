@@ -11,6 +11,7 @@ class CartsController < ApplicationController
   # GET /carts/1
   # GET /carts/1.json
   def show
+    render :show if @cart.id  == session[:cart_id]
   end
 
   # GET /carts/new
